@@ -41,6 +41,7 @@ set fish_pager_color_selected_description 151515
 set fish_pager_color_selected_prefix 151515
 
 set -gx DXVK_HUD fps
+alias edit-fish-config="nano $HOME/.config/fish/config.fish"
 alias disable-pstate="sudo bash -c 'echo passive >  /sys/devices/system/cpu/intel_pstate/status'"
 alias enable-pstate="sudo bash -c 'echo active >  /sys/devices/system/cpu/intel_pstate/status'"
 alias schedutil-tweak="sudo bash -c 'echo 0 > /sys/devices/system/cpu/cpufreq/schedutil/rate_limit_us'"
@@ -52,6 +53,13 @@ alias normalize-MONKE='find . -name \*.ape -execdir loudgain -a -k -s e "{}" +'
 alias normalize-m4a='find . -name \*.m4a -execdir loudgain -a -k -s e "{}" +'
 alias vscode-folder-fix="gio mime inode/directory org.gnome.Nautilus.desktop"
 alias vmware-modules-fix="sudo CPATH=/usr/src/kernels/$(uname -r)/include/linux vmware-modconfig --console --install-all"
+alias gpu-stats="sudo intel_gpu_top"
+alias zswap_stats="sudo (which zswap-stats)"
+alias dl-music-wav="yt-dlp -x --audio-format wav --audio-quality 0"
+alias dl-music="yt-dlp -x --audio-quality 0"
+alias mangohud-intel-workaround="sudo chmod o+r /sys/class/powercap/intel-rapl\:0/energy_uj && echo 'Remember to run disable-mangohud-intel-workaround!'"
+alias disable-mangohud-intel-workaround="sudo chmod o-r /sys/class/powercap/intel-rapl\:0/energy_uj"
+
 # Games
 alias oblivion="cd '/mnt/c0ef2aa8-4731-4f40-8d73-ccd76c1c532e/Games/Windows/MO2 Instances/Oblivion/' && WINEPREFIX=/home/mt/.games/ wine ModOrganizer.exe && cd "
 alias genshin="cd .games/drive_c/Program\ Files/Genshin\ Impact/Genshin\ Impact\ game/ && WINEPREFIX=/home/mt/.games wine GenshinImpact.exe && cd"
