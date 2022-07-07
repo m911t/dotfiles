@@ -59,6 +59,8 @@ alias dl-music-wav="yt-dlp -x --audio-format wav --audio-quality 0"
 alias dl-music="yt-dlp -x --audio-quality 0"
 alias mangohud-intel-workaround="sudo chmod o+r /sys/class/powercap/intel-rapl\:0/energy_uj && echo 'Remember to run disable-mangohud-intel-workaround!'"
 alias disable-mangohud-intel-workaround="sudo chmod o-r /sys/class/powercap/intel-rapl\:0/energy_uj"
+#alias wav2wvc="find . -name \*.wav -execdir wavpack --allow-huge-tags -b256 -hh -x4 -c --import-id3 -m -v -w Encoder -w Settings {} -o ~/Music/WavPack/{}.temp \; -execdir wvgain ~/Music/WavPack/{}.temp \;"
+alias loudgain4wavs="find . -name \*.wav -execdir loudgain -a -k --tagmode=e {} \;"
 
 # Games
 alias oblivion="cd '/mnt/c0ef2aa8-4731-4f40-8d73-ccd76c1c532e/Games/Windows/MO2 Instances/Oblivion/' && WINEPREFIX=/home/mt/.games/ wine ModOrganizer.exe && cd "
